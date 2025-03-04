@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: service-provider
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        health-check-path: /actuator/health
+      config:
+        enabled: false  # 关键：关闭配置中心
