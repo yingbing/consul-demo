@@ -11,5 +11,7 @@ spring:
       discovery:
         service-name: ${spring.application.name}
         health-check-path: /actuator/health
+#        register: false   # 关键：禁止注册自身
+#        enabled: false    # 可选：完全禁用服务发现功能
       config:
         enabled: false  # 关键：关闭配置中心
